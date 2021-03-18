@@ -4,7 +4,7 @@ This is the main service. It listens on port :3000, receives auth from Oathkeepe
 
 ## Expected Output
 
-`curl -H "X-User-ID=1234" -H "X-User-Provider=github" -H "X-User-Username=ghost" -H "X-User-Email=ghost@github.com" http://localhost:3000
+`curl -H "X-User-ID=1234" -H "X-User-Provider=github" -H "X-User-Username=ghost" -H "X-User-Email=ghost@github.com" http://localhost:3000`
 
 ```
 Hello user 1234

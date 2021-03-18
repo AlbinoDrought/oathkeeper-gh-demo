@@ -4,7 +4,7 @@ This service listens on port :3001 and performs all of your authentication by co
 
 ## Expected Output
 
-`curl -H "Authorization: Bearer github 1234" http://localhost:3001
+`curl -H "Authorization: Bearer github 1234" http://localhost:3001`
 
 ```
 {
