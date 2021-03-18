@@ -1,0 +1,41 @@
+access_rules:
+  repositories:
+    - file:///oathkeeper-config/access-rules.json
+
+serve:
+  proxy:
+    port: 4455
+  api:
+    port: 4456
+
+authenticators:
+  noop:
+    enabled: true
+  anonymous:
+    enabled: true
+    config:
+      subject: guest
+  unauthorized:
+    enabled: true
+  bearer_token:
+    enabled: true
+    config:
+      check_session_url: http://token-exchange:3001
+
+authorizers:
+  allow:
+    enabled: true
+  deny:
+    enabled: true
+
+mutators:
+  noop:
+    enabled: true
+  header:
+    enabled: true
+    config:
+      headers:
+        X-User-ID: '{{ print .Subject }}'
+        X-User-Provider: '{{ print .Extra.provider }}'
+        X-User-Username: '{{ print .Extra.username }}'
+        X-User-Email: '{{ print .Extra.email }}'

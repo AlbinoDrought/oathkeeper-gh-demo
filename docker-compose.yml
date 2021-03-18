@@ -1,0 +1,32 @@
+version: "2"
+
+services:
+  oathkeeper:
+    image: oryd/oathkeeper:v0.38.9-beta.1
+    ports:
+      - "80:4455"
+    volumes:
+      - ./oathkeeper:/oathkeeper-config:ro
+    command: [serve, --config, /oathkeeper-config/config.yaml]
+    environment:
+      - LOG_LEAK_SENSITIVE_VALUES=true
+    networks:
+      - exposed
+      - lan
+
+  web:
+    image: local-user-test
+    build: ./user-test
+    networks:
+      - lan
+
+  token-exchange:
+    image: local-token-exchange
+    build: ./token-exchange
+    networks:
+      - lan
+
+networks:
+  exposed:
+  
+  lan:

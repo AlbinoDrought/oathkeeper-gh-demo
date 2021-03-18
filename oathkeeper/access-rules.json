@@ -1,0 +1,26 @@
+[
+  {
+      "id": "site",
+      "upstream": {
+          "url": "http://web:3000",
+          "preserve_host": true
+      },
+      "match": {
+          "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "CONNECT", "OPTIONS"],
+          "url": "<.*>"
+      },
+      "authenticators": [
+          { "handler": "bearer_token" },
+          { "handler": "anonymous" }
+      ],
+      "authorizer": {
+          "handler": "allow"
+      },
+      "mutators": [
+          { "handler": "header" }
+      ],
+      "errors": [
+          { "handler": "json" }
+      ]
+  }
+]
