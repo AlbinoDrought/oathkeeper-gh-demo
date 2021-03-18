@@ -6,6 +6,8 @@ This example setup is composed of three services:
 2. [A service that exchanges tokens for user details](./token-exchange)
 3. [A service that does things with user details](./user-test)
 
+And [a command line application](./cli-test) that retrieves a token using the Github device OAuth flow and sends it to the above services. 
+
 ## Requirements
 
 - go 1.16
