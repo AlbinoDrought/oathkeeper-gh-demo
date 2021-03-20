@@ -2,11 +2,17 @@
 
 This example setup is composed of three services:
 
-1. Oathkeeper in reverse proxy mode
-2. [A service that exchanges tokens for user details](./token-exchange)
-3. [A service that does things with user details](./user-test)
+1. [A service that exchanges tokens for user details](./token-exchange)
+2. [A service that does things with user details](./user-test)
+3. Oathkeeper in reverse-proxy mode that connects the above
 
-And [a command line application](./cli-test) that retrieves a token using the Github device OAuth flow and sends it to the above services. 
+And [a command line application](./cli-test) that retrieves a token using the Github device OAuth flow and sends it to Oathkeeper.
+
+<p align="center">
+  <a href="./architecture-overview.svg">
+    <img src="./architecture-overview.svg" alt="Architecture Overview">
+  </a>
+</p>
 
 ## Requirements
 
